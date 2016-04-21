@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>StreamStorage</id>
+    <version>0.1.0.0</version>
+    <title>Stream Storage</title>
+    <authors>Berkaroad&lt;jiarong.bai198605@gmail.com&gt;</authors>
+    <owners>Berkaroad&lt;jiarong.bai198605@gmail.com&gt;</owners>
+    <licenseUrl>https://github.com/Berkaroad/StreamStorage.Net/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/berkaroad/StreamStorage.Net</projectUrl>
+    <iconUrl>https://github.com/berkaroad/StreamStorage.Net/favorit.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Abstract Stream Storage, you can implement it, such as aliyun oss, amazon s3. </description>
+    <language>en-US</language>
+    <copyright>Copyright berkaroad 2016</copyright>
+    <tags>storage stream</tags>
+    <dependencies>
+      <dependency id="ini-parser" version="2.2.4" />
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Web" targetFramework="net40" />
+    </frameworkAssemblies>
+  </metadata>
+  <files>
+    <file src="StreamStorage\lib\net40\StreamStorage.dll"  target="lib\net40\" />
+    <file src="StreamStorage\lib\net40\StreamStorage.xml"  target="lib\net40\" />
+    <file src="StreamStorage\lib\StreamStorage.ini"  target="lib\" />
+  </files>
+</package>

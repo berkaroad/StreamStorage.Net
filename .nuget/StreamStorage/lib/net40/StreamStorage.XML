@@ -1,0 +1,221 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StreamStorage</name>
+    </assembly>
+    <members>
+        <member name="T:StreamStorage.AbstractStreamStorageService">
+            <summary>
+            Abstract Stream Storage Service
+            </summary>
+        </member>
+        <member name="M:StreamStorage.AbstractStreamStorageService.ConfigureProvider(System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Configure Stream Storage Provider
+            </summary>
+            <param name="assemblyName"></param>
+            <param name="typeName"></param>
+            <param name="config"></param>
+        </member>
+        <member name="P:StreamStorage.AbstractStreamStorageService.ServiceName">
+            <summary>
+            Service Name
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="P:StreamStorage.AbstractStreamStorageService.Provider">
+            <summary>
+            Stream Storage Provider
+            </summary>
+        </member>
+        <member name="P:StreamStorage.DefaultStreamStorageService.ServiceName">
+            <summary>
+            Service Name
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="T:StreamStorage.LoadConfigurationException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StreamStorage.LoadConfigurationException.#ctor(System.String,System.Exception)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:StreamStorage.LocalFSStorageProvider">
+            <summary>
+            LocalFS Storage Provider
+            </summary>
+        </member>
+        <member name="P:StreamStorage.LocalFSStorageProvider.ProviderName">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.Configure(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            
+            </summary>
+            <param name="config"></param>
+        </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.DeleteObject(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="objectName"></param>
+        </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.GetObject(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="objectName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.ObjectExists(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="objectName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.PutObject(System.String,System.IO.Stream,System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="objectName"></param>
+            <param name="content"></param>
+            <param name="overrideIfExists"></param>
+        </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.GetFullFileName(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="objectName"></param>
+            <returns></returns>
+        </member>
+        <member name="T:StreamStorage.IStorageConfig">
+            <summary>
+            Storage Configuration
+            </summary>
+        </member>
+        <member name="M:StreamStorage.IStorageConfig.Configure(System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Configure
+            </summary>
+            <param name="config">key-value config</param>
+        </member>
+        <member name="T:StreamStorage.IStreamStorageProvider">
+            <summary>
+            Stream Storage Provider
+            </summary>
+        </member>
+        <member name="P:StreamStorage.IStreamStorageProvider.ProviderName">
+            <summary>
+            Provider Name
+            </summary>
+        </member>
+        <member name="M:StreamStorage.IStreamStorageProvider.GetObject(System.String)">
+            <summary>
+            Get Object
+            </summary>
+            <param name="objectName">Object Name:path1/path2/filename</param>
+            <exception cref="T:System.ArgumentNullException">objectName is null</exception>
+            <exception cref="T:StreamStorage.StorageObjectNotFoundException">Storage object not found</exception>
+            <exception cref="T:StreamStorage.StorageIOException">Storage IO error</exception>
+            <returns></returns>
+        </member>
+        <member name="M:StreamStorage.IStreamStorageProvider.PutObject(System.String,System.IO.Stream,System.Boolean)">
+            <summary>
+            Pub Object
+            </summary>
+            <param name="objectName">Object Name:path1/path2/filename</param>
+            <param name="content">Content</param>
+            <param name="overrideIfExists">override if exists</param>
+            <exception cref="T:System.ArgumentNullException">objectName is null</exception>
+            <exception cref="T:StreamStorage.StorageIOException">Storage IO error</exception>
+        </member>
+        <member name="M:StreamStorage.IStreamStorageProvider.DeleteObject(System.String)">
+            <summary>
+            Delete Object
+            </summary>
+            <param name="objectName">Object Name:path1/path2/filename</param>
+            <exception cref="T:System.ArgumentNullException">objectName is null</exception>
+            <exception cref="T:StreamStorage.StorageIOException">Storage IO error</exception>
+        </member>
+        <member name="M:StreamStorage.IStreamStorageProvider.ObjectExists(System.String)">
+            <summary>
+            Object Exists
+            </summary>
+            <param name="objectName">Object Name:path1/path2/filename</param>
+            <exception cref="T:System.ArgumentNullException">objectName is null</exception>
+            <exception cref="T:StreamStorage.StorageIOException">Storage IO error</exception>
+            <returns></returns>
+        </member>
+        <member name="T:StreamStorage.IStreamStorageService">
+            <summary>
+            Stream Storage Service
+            </summary>
+        </member>
+        <member name="P:StreamStorage.IStreamStorageService.ServiceName">
+            <summary>
+            Service Name
+            </summary>
+            <value>The name of the service.</value>
+        </member>
+        <member name="P:StreamStorage.IStreamStorageService.Provider">
+            <summary>
+            Stream Storage Provider
+            </summary>
+        </member>
+        <member name="T:StreamStorage.StorageIOException">
+            <summary>
+            Storage IO Error
+            </summary>
+        </member>
+        <member name="M:StreamStorage.StorageIOException.#ctor(System.String,System.Exception)">
+            <summary>
+            Storage IO Error
+            </summary>
+            <param name="message"></param>
+            <param name="innerException"></param>
+        </member>
+        <member name="T:StreamStorage.StorageObjectNotFoundException">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StreamStorage.StorageObjectNotFoundException.#ctor(System.String,System.String)">
+            <summary>
+            
+            </summary>
+            <param name="message"></param>
+            <param name="fileName"></param>
+        </member>
+        <member name="T:StreamStorage.StreamStorageServiceFactory">
+            <summary>
+            Stream Storage Service Factory
+            </summary>
+        </member>
+        <member name="M:StreamStorage.StreamStorageServiceFactory.Create">
+            <summary>
+            Create Stream Storage Service
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:StreamStorage.RuntimeEnvironment">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:StreamStorage.RuntimeEnvironment.GetPhysicalApplicationPath">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
