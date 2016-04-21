@@ -4,3 +4,4 @@ obj/
 .vs
 *.userprefs
 /packages
+/.nuget/packages/*.nupkg
