@@ -1,0 +1,6 @@
+bin/
+obj/
+*.suo
+.vs
+packages/*/
+*.userprefs
