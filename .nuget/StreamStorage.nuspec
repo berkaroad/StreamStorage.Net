@@ -14,7 +14,7 @@
     <summary>Abstract Stream Storage, you can implement it, such as aliyun oss, amazon s3. </summary>
     <language>en-US</language>
     <copyright>Copyright berkaroad 2016</copyright>
-    <tags>StorageStream Storage oss s3</tags>
+    <tags>StreamStorage localfs</tags>
     <dependencies>
       <dependency id="ini-parser" version="2.2.4" />
     </dependencies>
