@@ -2,11 +2,11 @@
 <package >
   <metadata>
     <id>StreamStorage</id>
-    <version>1.0.0.0</version>
+    <version>1.0.1</version>
     <title>Stream Storage For .NET</title>
     <authors>Berkaroad&lt;chinaren_bjr@163.com&gt;</authors>
     <owners>Berkaroad&lt;chinaren_bjr@163.com&gt;</owners>
-    <licenseUrl>https://github.com/Berkaroad/StreamStorage.Net/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://github.com/Berkaroad/StreamStorage.Net/blob/release-1.0/LICENSE</licenseUrl>
     <projectUrl>https://github.com/berkaroad/StreamStorage.Net</projectUrl>
     <iconUrl>https://github.com/berkaroad/StreamStorage.Net/favorit.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
