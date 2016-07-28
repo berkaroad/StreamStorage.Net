@@ -34,11 +34,11 @@ namespace StreamStorage
                 using (StreamReader sr = File.OpenText(configFile))
                 {
                     var data = parser.ReadData(sr);
-                    var streamStorageConfig = data["stream_storage"];
-                    string storageType = streamStorageConfig["storageType"];
-                    var specificStreamStorageConfig = data[storageType];
-                    config = specificStreamStorageConfig.Where(c => c.KeyName != "__class").ToDictionary(c => c.KeyName, c => c.Value);
-                    var className = specificStreamStorageConfig["__class"];
+                    var globalConfig = data["stream_storage"];
+                    string configType = globalConfig["storageType"];
+                    var specificConfig = data[configType];
+                    config = specificConfig.Where(c => c.KeyName != "__class").ToDictionary(c => c.KeyName, c => c.Value);
+                    var className = specificConfig["__class"];
                     int classNameSepIndex = className.LastIndexOf(',');
                     assemblyName = className.Substring(0, classNameSepIndex).Trim();
                     typeName = className.Substring(classNameSepIndex + 1).Trim();

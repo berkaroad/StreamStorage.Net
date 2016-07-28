@@ -208,7 +208,7 @@
         </member>
         <member name="T:StreamStorage.RuntimeEnvironment">
             <summary>
-            
+            Runtime Environment
             </summary>
         </member>
         <member name="M:StreamStorage.RuntimeEnvironment.GetPhysicalApplicationPath">

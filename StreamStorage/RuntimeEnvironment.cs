@@ -6,7 +6,7 @@ using System.Text;
 namespace StreamStorage
 {
     /// <summary>
-    /// 
+    /// Runtime Environment
     /// </summary>
 	public class RuntimeEnvironment
     {

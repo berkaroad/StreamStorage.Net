@@ -33,6 +33,10 @@ namespace StreamStorage
         /// <param name="objectName"></param>
         public void DeleteObject(string objectName)
         {
+            if (objectName != null)
+            {
+                objectName = objectName.Trim('/');
+            }
             if (String.IsNullOrEmpty(objectName))
             {
                 throw new ArgumentNullException("objectName");
@@ -62,6 +66,10 @@ namespace StreamStorage
         /// <returns></returns>
         public Stream GetObject(string objectName)
         {
+            if (objectName != null)
+            {
+                objectName = objectName.Trim('/');
+            }
             if (String.IsNullOrEmpty(objectName))
             {
                 throw new ArgumentNullException("objectName");
@@ -95,6 +103,10 @@ namespace StreamStorage
         /// <returns></returns>
         public bool ObjectExists(string objectName)
         {
+            if (objectName != null)
+            {
+                objectName = objectName.Trim('/');
+            }
             if (String.IsNullOrEmpty(objectName))
             {
                 throw new ArgumentNullException("objectName");
@@ -118,6 +130,10 @@ namespace StreamStorage
         /// <param name="overrideIfExists"></param>
         public void PutObject(string objectName, Stream content, bool overrideIfExists)
         {
+            if (objectName != null)
+            {
+                objectName = objectName.Trim('/');
+            }
             if (String.IsNullOrEmpty(objectName))
             {
                 throw new ArgumentNullException("objectName");
