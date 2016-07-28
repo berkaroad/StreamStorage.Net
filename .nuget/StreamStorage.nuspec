@@ -8,7 +8,7 @@
     <owners>Berkaroad&lt;chinaren_bjr@163.com&gt;</owners>
     <licenseUrl>https://github.com/Berkaroad/StreamStorage.Net/blob/release-1.0/LICENSE</licenseUrl>
     <projectUrl>https://github.com/berkaroad/StreamStorage.Net</projectUrl>
-    <iconUrl>https://github.com/berkaroad/StreamStorage.Net/favorit.ico</iconUrl>
+    <iconUrl>https://github.com/berkaroad/StreamStorage.Net/blob/release-1.0/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abstract Stream Storage, you can implement it, such as aliyun oss, amazon s3. </description>
     <summary>Abstract Stream Storage, you can implement it, such as aliyun oss, amazon s3. </summary>
