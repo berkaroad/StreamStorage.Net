@@ -9,9 +9,9 @@ namespace StreamStorage
     {
         private string _metadataFileName = "";
         private static readonly List<string> _buildinMetadatas = new List<string>(new string[] {
-            "content-disposition",
-            "content-length",
-            "content-type" });
+            "Content-Disposition",
+            "Content-Length",
+            "Content-Type" });
 
         public LocalFSMetadataStore(string metadataFileName)
         {
@@ -30,7 +30,7 @@ namespace StreamStorage
                         int splitIndex = line.IndexOf('=');
                         if (splitIndex > 0 && splitIndex < line.Length - 1)
                         {
-                            string key = line.Substring(0, splitIndex).Trim().ToLower();
+                            string key = line.Substring(0, splitIndex).Trim();
                             string value = line.Substring(splitIndex + 1).Trim();
                             if (!String.IsNullOrEmpty(key) && !metadataDic.ContainsKey(key))
                             {
@@ -74,7 +74,7 @@ namespace StreamStorage
                 StringBuilder sb = new StringBuilder();
                 if (!String.IsNullOrEmpty(metadata.ContentDisposition))
                 {
-                    metadata.ContentDisposition = metadata.ContentDisposition.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "").ToLower();
+                    metadata.ContentDisposition = metadata.ContentDisposition.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "");
                     sb.Append(String.Format("{0}={1}\n", _buildinMetadatas[0], metadata.ContentDisposition));
                 }
                 if (metadata.ContentLength >= 0)
@@ -83,12 +83,12 @@ namespace StreamStorage
                 }
                 if (!String.IsNullOrEmpty(metadata.ContentType))
                 {
-                    metadata.ContentType = metadata.ContentType.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "").ToLower();
+                    metadata.ContentType = metadata.ContentType.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "");
                     sb.Append(String.Format("{0}={1}\n", _buildinMetadatas[2], metadata.ContentType));
                 }
                 foreach (var userMetadata in metadata.UserMetadata)
                 {
-                    string key = userMetadata.Key == null ? "" : userMetadata.Key.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "").ToLower();
+                    string key = userMetadata.Key == null ? "" : userMetadata.Key.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "");
                     string value = userMetadata.Value == null ? "" : userMetadata.Value.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "");
                     if (!String.IsNullOrEmpty(key) && !String.IsNullOrEmpty(value) && !_buildinMetadatas.Contains(key))
                     {

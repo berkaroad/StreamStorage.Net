@@ -143,7 +143,7 @@ namespace StreamStorage
             }
             catch (Exception ex)
             {
-                throw new StorageIOException("Get object metada fail!", ex);
+                throw new StorageIOException("Get object metadata fail!", ex);
             }
         }
         
@@ -179,7 +179,7 @@ namespace StreamStorage
             }
             catch (Exception ex)
             {
-                throw new StorageIOException("Set ObjectMetadata fail!", ex);
+                throw new StorageIOException("Set object metadata fail!", ex);
             }
         }
 
