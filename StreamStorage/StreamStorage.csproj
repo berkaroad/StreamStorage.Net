@@ -15,6 +15,8 @@
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ReleaseVersion>0.1.0</ReleaseVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,10 +53,14 @@
     <Compile Include="AbstractStreamStorageService.cs" />
     <Compile Include="DefaultStreamStorageService.cs" />
     <Compile Include="LoadConfigurationException.cs" />
+    <Compile Include="LocalFSMetadataStore.cs" />
     <Compile Include="LocalFSStorageProvider.cs" />
     <Compile Include="IStorageConfig.cs" />
     <Compile Include="IStreamStorageProvider.cs" />
     <Compile Include="IStreamStorageService.cs" />
+    <Compile Include="MimeUtils.cs" />
+    <Compile Include="ObjectMetadata.cs" />
+    <Compile Include="ObjectWrapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StorageIOException.cs" />
     <Compile Include="StorageObjectNotFoundException.cs" />
@@ -64,6 +70,9 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="StreamStorage.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="mime.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

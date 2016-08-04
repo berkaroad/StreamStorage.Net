@@ -1,17 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace StreamStorage
+﻿namespace StreamStorage
 {
     /// <summary>
-    /// 
+    /// Storage Object NotFound
     /// </summary>
     public class StorageObjectNotFoundException : System.IO.FileNotFoundException
     {
         /// <summary>
-        /// 
+        /// Storage Object NotFound
         /// </summary>
         /// <param name="message"></param>
         /// <param name="fileName"></param>
