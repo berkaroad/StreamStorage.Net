@@ -27,9 +27,9 @@ namespace StreamStorage
         public string ContentType { get; set; }
 
         /// <summary>
-        /// Attachment FileName
+        /// Content Disposition
         /// </summary>
-        public string AttachmentFileName { get; set; }
+        public string ContentDisposition { get; set; }
 
         /// <summary>
         /// User Metadata

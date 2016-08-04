@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>StreamStorage</id>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <title>Stream Storage For .NET</title>
     <authors>Berkaroad&lt;chinaren_bjr@163.com&gt;</authors>
     <owners>Berkaroad&lt;chinaren_bjr@163.com&gt;</owners>

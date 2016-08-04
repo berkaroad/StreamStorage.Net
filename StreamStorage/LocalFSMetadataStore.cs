@@ -9,7 +9,7 @@ namespace StreamStorage
     {
         private string _metadataFileName = "";
         private static readonly List<string> _buildinMetadatas = new List<string>(new string[] {
-            "attachment-file-name",
+            "content-disposition",
             "content-length",
             "content-type" });
 
@@ -41,7 +41,7 @@ namespace StreamStorage
 
                     if (metadataDic.ContainsKey(_buildinMetadatas[0]))
                     {
-                        metadata.AttachmentFileName = metadataDic[_buildinMetadatas[0]];
+                        metadata.ContentDisposition = metadataDic[_buildinMetadatas[0]];
                     }
                     if (metadataDic.ContainsKey(_buildinMetadatas[1]))
                     {
@@ -72,10 +72,10 @@ namespace StreamStorage
             if (metadata != null && !String.IsNullOrEmpty(_metadataFileName))
             {
                 StringBuilder sb = new StringBuilder();
-                if (!String.IsNullOrEmpty(metadata.AttachmentFileName))
+                if (!String.IsNullOrEmpty(metadata.ContentDisposition))
                 {
-                    metadata.AttachmentFileName = metadata.AttachmentFileName.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "").ToLower();
-                    sb.Append(String.Format("{0}={1}\n", _buildinMetadatas[0], metadata.AttachmentFileName));
+                    metadata.ContentDisposition = metadata.ContentDisposition.Trim().Replace("\0", "").Replace("\r", "").Replace("\n", "").ToLower();
+                    sb.Append(String.Format("{0}={1}\n", _buildinMetadatas[0], metadata.ContentDisposition));
                 }
                 if (metadata.ContentLength >= 0)
                 {

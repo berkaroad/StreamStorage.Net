@@ -241,9 +241,9 @@
             Content Type
             </summary>
         </member>
-        <member name="P:StreamStorage.ObjectMetadata.AttachmentFileName">
+        <member name="P:StreamStorage.ObjectMetadata.ContentDisposition">
             <summary>
-            Attachment FileName
+            Content Disposition
             </summary>
         </member>
         <member name="P:StreamStorage.ObjectMetadata.UserMetadata">
