@@ -61,6 +61,7 @@
             
             </summary>
             <param name="config"></param>
+            <exception cref="T:System.ArgumentException"></exception>
         </member>
         <member name="M:StreamStorage.LocalFSStorageProvider.DeleteObject(System.String)">
             <summary>
@@ -75,6 +76,21 @@
             <param name="objectName"></param>
             <returns></returns>
         </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.GetObjectMetadata(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="objectName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StreamStorage.LocalFSStorageProvider.SetObjectMetadata(System.String,StreamStorage.ObjectMetadata)">
+            <summary>
+            Set Object Metadata
+            </summary>
+            <param name="objectName"></param>
+            <param name="objectMetadata">Object metadata</param>
+            <returns></returns>
+        </member>
         <member name="M:StreamStorage.LocalFSStorageProvider.ObjectExists(System.String)">
             <summary>
             
@@ -82,17 +98,18 @@
             <param name="objectName"></param>
             <returns></returns>
         </member>
-        <member name="M:StreamStorage.LocalFSStorageProvider.PutObject(System.String,System.IO.Stream,System.Boolean)">
+        <member name="M:StreamStorage.LocalFSStorageProvider.PutObject(System.String,System.IO.Stream,System.Boolean,StreamStorage.ObjectMetadata)">
             <summary>
             
             </summary>
             <param name="objectName"></param>
             <param name="content"></param>
             <param name="overrideIfExists"></param>
+            <param name="objectMetadata"></param>
         </member>
         <member name="M:StreamStorage.LocalFSStorageProvider.GetFullFileName(System.String)">
             <summary>
-            
+            Get fullfilename
             </summary>
             <param name="objectName"></param>
             <returns></returns>
@@ -128,13 +145,29 @@
             <exception cref="T:StreamStorage.StorageIOException">Storage IO error</exception>
             <returns></returns>
         </member>
-        <member name="M:StreamStorage.IStreamStorageProvider.PutObject(System.String,System.IO.Stream,System.Boolean)">
+        <member name="M:StreamStorage.IStreamStorageProvider.GetObjectMetadata(System.String)">
+            <summary>
+            Get Object Metadata
+            </summary>
+            <param name="objectName"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StreamStorage.IStreamStorageProvider.SetObjectMetadata(System.String,StreamStorage.ObjectMetadata)">
+            <summary>
+            Set Object Metadata
+            </summary>
+            <param name="objectName"></param>
+            <param name="objectMetadata">Object metadata</param>
+            <returns></returns>
+        </member>
+        <member name="M:StreamStorage.IStreamStorageProvider.PutObject(System.String,System.IO.Stream,System.Boolean,StreamStorage.ObjectMetadata)">
             <summary>
             Pub Object
             </summary>
             <param name="objectName">Object Name:path1/path2/filename</param>
             <param name="content">Content</param>
             <param name="overrideIfExists">override if exists</param>
+            <param name="objectMetadata">Object metadata</param>
             <exception cref="T:System.ArgumentNullException">objectName is null</exception>
             <exception cref="T:StreamStorage.StorageIOException">Storage IO error</exception>
         </member>
@@ -171,6 +204,86 @@
             Stream Storage Provider
             </summary>
         </member>
+        <member name="T:StreamStorage.MimeUtils">
+            <summary>
+            Mime Utils
+            </summary>
+        </member>
+        <member name="P:StreamStorage.MimeUtils.Instance">
+            <summary>
+            Singleton Instance
+            </summary>
+        </member>
+        <member name="M:StreamStorage.MimeUtils.GetMimeByFileExt(System.String)">
+            <summary>
+            Get Mime by file ext
+            </summary>
+            <param name="fileExt">.doc</param>
+            <returns></returns>
+        </member>
+        <member name="T:StreamStorage.ObjectMetadata">
+            <summary>
+            Object Metadata
+            </summary>
+        </member>
+        <member name="M:StreamStorage.ObjectMetadata.#ctor">
+            <summary>
+            Object MetaData
+            </summary>
+        </member>
+        <member name="P:StreamStorage.ObjectMetadata.ContentLength">
+            <summary>
+            Content Length
+            </summary>
+        </member>
+        <member name="P:StreamStorage.ObjectMetadata.ContentType">
+            <summary>
+            Content Type
+            </summary>
+        </member>
+        <member name="P:StreamStorage.ObjectMetadata.AttachmentFileName">
+            <summary>
+            Attachment FileName
+            </summary>
+        </member>
+        <member name="P:StreamStorage.ObjectMetadata.UserMetadata">
+            <summary>
+            User Metadata
+            </summary>
+        </member>
+        <member name="T:StreamStorage.ObjectWrapper">
+            <summary>
+            Object Wrapper
+            </summary>
+        </member>
+        <member name="M:StreamStorage.ObjectWrapper.#ctor(System.String,System.IO.Stream,StreamStorage.ObjectMetadata)">
+            <summary>
+            Object Wrapper
+            </summary>
+            <param name="objectName"></param>
+            <param name="content"></param>
+            <param name="objectMetadata"></param>
+        </member>
+        <member name="P:StreamStorage.ObjectWrapper.ObjectName">
+            <summary>
+            Object Name
+            </summary>
+        </member>
+        <member name="P:StreamStorage.ObjectWrapper.Content">
+            <summary>
+            Content
+            </summary>
+        </member>
+        <member name="P:StreamStorage.ObjectWrapper.ObjectMetadata">
+            <summary>
+            Object Metadata
+            </summary>
+        </member>
+        <member name="M:StreamStorage.ObjectWrapper.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
         <member name="T:StreamStorage.StorageIOException">
             <summary>
             Storage IO Error
@@ -185,12 +298,12 @@
         </member>
         <member name="T:StreamStorage.StorageObjectNotFoundException">
             <summary>
-            
+            Storage Object NotFound
             </summary>
         </member>
         <member name="M:StreamStorage.StorageObjectNotFoundException.#ctor(System.String,System.String)">
             <summary>
-            
+            Storage Object NotFound
             </summary>
             <param name="message"></param>
             <param name="fileName"></param>

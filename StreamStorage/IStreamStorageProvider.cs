@@ -21,7 +21,22 @@ namespace StreamStorage
         /// <exception cref="StorageObjectNotFoundException">Storage object not found</exception>
         /// <exception cref="StorageIOException">Storage IO error</exception>
         /// <returns></returns>
-        Stream GetObject(string objectName);
+        ObjectWrapper GetObject(string objectName);
+
+        /// <summary>
+        /// Get Object Metadata
+        /// </summary>
+        /// <param name="objectName"></param>
+        /// <returns></returns>
+        ObjectMetadata GetObjectMetadata(string objectName);
+
+        /// <summary>
+        /// Set Object Metadata
+        /// </summary>
+        /// <param name="objectName"></param>
+        /// <param name="objectMetadata">Object metadata</param>
+        /// <returns></returns>
+        void SetObjectMetadata(string objectName, ObjectMetadata objectMetadata);
 
         /// <summary>
         /// Pub Object
@@ -29,9 +44,10 @@ namespace StreamStorage
 		/// <param name="objectName">Object Name:path1/path2/filename</param>
         /// <param name="content">Content</param>
         /// <param name="overrideIfExists">override if exists</param>
+        /// <param name="objectMetadata">Object metadata</param>
 		/// <exception cref="ArgumentNullException">objectName is null</exception>
 		/// <exception cref="StorageIOException">Storage IO error</exception>
-        void PutObject(string objectName, Stream content, bool overrideIfExists);
+        void PutObject(string objectName, Stream content, bool overrideIfExists, ObjectMetadata objectMetadata = null);
 
         /// <summary>
         /// Delete Object
