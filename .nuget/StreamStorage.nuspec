@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>StreamStorage</id>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <title>Stream Storage For .NET</title>
     <authors>Berkaroad&lt;chinaren_bjr@163.com&gt;</authors>
     <owners>Berkaroad&lt;chinaren_bjr@163.com&gt;</owners>
-    <licenseUrl>https://github.com/Berkaroad/StreamStorage.Net/blob/release-1.0/LICENSE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/Berkaroad/StreamStorage.Net/release-1.1/LICENSE</licenseUrl>
     <projectUrl>https://github.com/berkaroad/StreamStorage.Net</projectUrl>
-    <iconUrl>https://github.com/berkaroad/StreamStorage.Net/blob/release-1.0/favicon.ico</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/berkaroad/StreamStorage.Net/release-1.1/favicon.ico</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Abstract Stream Storage, you can implement it, such as aliyun oss, amazon s3. </description>
     <summary>Abstract Stream Storage, you can implement it, such as aliyun oss, amazon s3. </summary>
