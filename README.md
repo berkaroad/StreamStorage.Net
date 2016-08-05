@@ -29,7 +29,7 @@ Abstract Stream Storage, localFS is implemented default.
 
     // save object (if exists, then override it), fill with metadata
     StreamStorage.ObjectMetadata metadata = new StreamStorage.ObjectMetadata metadata();
-    metadata.AttachmentFileName = "FriendlyFileName.txt";
+    metadata.ContentDisposition = "attachment;filename=FriendlyFileName.txt";
     using (System.IO.Stream ms = new System.IO.MemoryStream())
     {
         byte[] buffer = System.Text.Encoding.UTF8.GetBytes("Hello, my friend!");
