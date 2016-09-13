@@ -28,13 +28,16 @@ namespace StreamStorage
             }
             if (content != null && content != Stream.Null)
             {
-                try
+                if (objectMetadata.ContentLength <= 0)
                 {
-                    ObjectMetadata.ContentLength = content.Length;
-                }
-                catch(NotSupportedException)
-                {
-                    ObjectMetadata.ContentLength = -1L;
+                    try
+                    {
+                        ObjectMetadata.ContentLength = content.Length;
+                    }
+                    catch (NotSupportedException)
+                    {
+                        ObjectMetadata.ContentLength = -1L;
+                    }
                 }
             }
             else
