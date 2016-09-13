@@ -28,7 +28,7 @@ namespace StreamStorage
             }
             if (content != null && content != Stream.Null)
             {
-                if (objectMetadata.ContentLength <= 0)
+                if (ObjectMetadata.ContentLength <= 0)
                 {
                     try
                     {
